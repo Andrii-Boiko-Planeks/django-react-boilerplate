@@ -8,7 +8,7 @@ Download the last version of the boilerplate from the repository: https://github
 
 You can download the ZIP archive and unpack it to the directory, or clone the repository (but do not forget to clean the Git history in that case). 
 
-Use the global find and replace for changing the string `NEWPROJECTNAME` in the files in the `backend` and `frontend` directories to the proper project name. The easiest way to do it just use `Replace` feature in the IDE.
+Use the global find and replace for changing the string `kiosk` in the files in the `backend` and `frontend` directories to the proper project name. The easiest way to do it just use `Replace` feature in the IDE.
 
 There are four files where the changes should be done:
 
@@ -61,7 +61,7 @@ $ cp dev.env .env
 Open the `.env` file in your editor and specify the settings:
 
 ```shell
-COMPOSE_IMAGES_PREFIX=newprojectname
+COMPOSE_IMAGES_PREFIX=kiosk
 REDIS_URL=redis://redis:6379/0
 ```
 
@@ -100,7 +100,7 @@ $ cp frontend/dev.env frontend/.env
 Open the `frontend/.env` file in your editor and specify the settings:
 
 ```shell
-REACT_APP_PROJECT_NAME=NEWPROJECTNAME
+REACT_APP_PROJECT_NAME=kiosk
 REACT_APP_BACKEND_URL=http://127.0.0.1:8000
 ```
 
@@ -342,7 +342,7 @@ $ cp prod.env .env
 Open the `.env` file in your editor and specify the settings:
 
 ```shell
-COMPOSE_IMAGES_PREFIX=newprojectname
+COMPOSE_IMAGES_PREFIX=kiosk
 REDIS_URL=redis://redis:6379/0
 CELERY_FLOWER_USER=flower
 CELERY_FLOWER_PASSWORD=<flower_password>
@@ -389,7 +389,7 @@ $ cp frontend/prod.env frontend/.env
 Open the `frontend/.env` file in your editor and specify the settings:
 
 ```shell
-REACT_APP_PROJECT_NAME=NEWPROJECTNAME
+REACT_APP_PROJECT_NAME=kiosk
 REACT_APP_BACKEND_URL=<backend_url>
 ```
 

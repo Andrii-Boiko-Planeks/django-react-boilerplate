@@ -6,7 +6,7 @@ export class Layout extends Component {
     render() {
         return (
             <div>
-                {<Navigation/>}
+                {/*{<Navigation/>}*/}
                 <div className={'container'}>
                     <Outlet/>
                 </div>

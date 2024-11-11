@@ -6,7 +6,7 @@ from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
-PROJECT_NAME = config('PROJECT_NAME', default='NEWPROJECTNAME')
+PROJECT_NAME = config('PROJECT_NAME', default='kiosk')
 
 SECRET_KEY = config('SECRET_KEY')
 

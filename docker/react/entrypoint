@@ -39,7 +39,7 @@ case "$1" in
     ;;
     prod)
         # Use the next line if you want to make production build before the server start
-        # npm run build
+         npm run build
 
         exec serve -s build
     ;;

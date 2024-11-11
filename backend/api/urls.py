@@ -8,7 +8,7 @@ from . import views
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="NEWPROJECTNAME API",
+        title="kiosk API",
         default_version='v1',
     ),
     public=True,

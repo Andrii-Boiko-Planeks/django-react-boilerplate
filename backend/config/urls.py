@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, re_path, include
 
-admin.site.site_header = 'NEWPROJECTNAME | Admin console'
+admin.site.site_header = 'kiosk | Admin console'
 # admin.site.enable_nav_sidebar = False
 
 urlpatterns = [
