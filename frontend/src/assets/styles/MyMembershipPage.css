@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #000000;
+}
+
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl .detail-item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.membership-info {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #000000;
+}
+
+.section-title {
+    grid-column: span 2;
+    text-align: left;
+    margin-bottom: 1rem;
+    color: #000000;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.personal-details, .contact-details, .membership-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.1rem;
+}
+
+label {
+    font-weight: bold;
+    display: inline-block;
+    color: #000000;
+}
+
+span {
+    margin-left: 10px;
+    color: #000000;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    color: #000000;
+    background-color: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #000000;
+    border-radius: 12px;
+}
+
+button:hover {
+    background-color: #a0a0a0;
+}
+
+.edit-button {
+    padding: 5px 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: end;
+    border: 0.1rem solid #000000;
+    border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+    .personal-details, .contact-details, .membership-details {
+        grid-template-columns: 1fr;
+    }
+
+    label {
+        width: auto;
+    }
+
+    section div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+}
