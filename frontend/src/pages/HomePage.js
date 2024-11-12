@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {useTranslation} from 'react-i18next';
+import {Link} from 'react-router-dom';
 import '../assets/styles/HomePage.css';
 import i18n from '../i18n';
 
 function HomePage() {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     useEffect(() => {
         const savedLanguage = localStorage.getItem('language') || 'en';
@@ -33,7 +33,9 @@ function HomePage() {
                     <Link to="/login/">
                         <button className="main-button">{t('Log in')}</button>
                     </Link>
-                    <button className="main-button">{t('Free Trial')}</button>
+                    <Link to="/free-trial/">
+                        <button className="main-button">{t('Free Trial')}</button>
+                    </Link>
                 </div>
                 <div className="language-buttons">
                     <button className="lang-button" onClick={() => changeLanguage('en')}>
