@@ -113,6 +113,9 @@ if CONFIGURATION == 'dev':
         'SHOW_TOOLBAR_CALLBACK': lambda x: True,
     }
     CORS_ORIGIN_WHITELIST = config('FRONTEND_URLS', cast=Csv())
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:3000",
+    ]
 
 ROOT_URLCONF = 'config.urls'
 
