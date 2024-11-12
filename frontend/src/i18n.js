@@ -17,6 +17,8 @@ const resources = {
       "Email": "Email",
       "Phone Number": "Phone Number",
       "Submit": "Submit",
+      "Scan this QR code to join today!": "Scan this QR code to join today!",
+      "Memberships": "Memberships",
     }
   },
   ar: {
@@ -34,6 +36,8 @@ const resources = {
       "Email": "البريد الإلكتروني",
       "Phone Number": "رقم الهاتف",
       "Submit": "إرسال",
+      "Scan this QR code to join today!": "امسح رمز الاستجابة السريعة هذا للانضمام اليوم!",
+      "Memberships": "العضويات",
     }
   }
 };

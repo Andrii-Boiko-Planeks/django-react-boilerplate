@@ -7,6 +7,7 @@ import {Layout} from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import FreeTrialPage from "./pages/FreeTrialPage";
+import JoinNowPage from "./pages/JoinNowPage";
 
 export default function App() {
     return (
@@ -18,6 +19,7 @@ export default function App() {
                     <Route path={'/homepage/'} element={<HomePage/>}/>
                     <Route path={'/login/'} element={<LoginPage/>}/>
                     <Route path={'/free-trial/'} element={<FreeTrialPage/>}/>
+                    <Route path={'/join-now/'} element={<JoinNowPage/>}/>
                 </Route>
             </Routes>
         </Router>

@@ -29,7 +29,9 @@ function HomePage() {
                     </svg>
                 </div>
                 <div className="buttons-container">
-                    <button className="main-button">{t('Join now')}</button>
+                    <Link to="/join-now/">
+                        <button className="main-button">{t('Join now')}</button>
+                    </Link>
                     <Link to="/login/">
                         <button className="main-button">{t('Log in')}</button>
                     </Link>
