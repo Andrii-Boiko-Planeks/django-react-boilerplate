@@ -19,6 +19,11 @@ const resources = {
       "Submit": "Submit",
       "Scan this QR code to join today!": "Scan this QR code to join today!",
       "Memberships": "Memberships",
+      "Welcome! What do you want to do today?": "Welcome! What do you want to do today?",
+      "My membership": "My membership",
+      "Payments": "Payments",
+      "Refer a Buddy": "Refer a Buddy",
+      "Upgrade/Add ons": "Upgrade/Add ons",
     }
   },
   ar: {
@@ -38,6 +43,11 @@ const resources = {
       "Submit": "إرسال",
       "Scan this QR code to join today!": "امسح رمز الاستجابة السريعة هذا للانضمام اليوم!",
       "Memberships": "العضويات",
+      "Welcome! What do you want to do today?": "أهلاً وسهلاً بك! ماذا تريد أن تفعل اليوم؟",
+      "My membership": "عضويتي",
+      "Payments": "المدفوعات",
+      "Refer a Buddy": "إحالة صديق",
+      "Upgrade/Add ons": "الترقية/الإضافات",
     }
   }
 };

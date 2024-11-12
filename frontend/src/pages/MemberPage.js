@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
-import '../assets/styles/HomePage.css';
+import '../assets/styles/MemberPage.css';
 import i18n from '../i18n';
+import Header from "../components/Header";
 
-function HomePage() {
+function MemberPage() {
     const {t} = useTranslation();
 
     useEffect(() => {
@@ -12,13 +13,9 @@ function HomePage() {
         i18n.changeLanguage(savedLanguage);
     }, []);
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-        localStorage.setItem('language', lng);
-    };
-
     return (
         <div className="App">
+            <Header/>
             <header className="App-header">
                 <div className="video-container">
                     <svg width="479" height="399" viewBox="0 0 479 399" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,28 +25,24 @@ function HomePage() {
                         <path d="M201 140.119L287.662 187.5L201 234.881V140.119Z" stroke="black" stroke-width="8"/>
                     </svg>
                 </div>
+                <h1 className="memberships-title">{t('Welcome! What do you want to do today?')}</h1>
                 <div className="buttons-container">
-                    <Link to="/join-now/">
-                        <button className="main-button">{t('Join now')}</button>
+                    <Link to="">
+                        <button className="main-button">{t('My membership')}</button>
                     </Link>
-                    <Link to="/member/">
-                        <button className="main-button">{t('Log in')}</button>
+                    <Link to="">
+                        <button className="main-button">{t('Payments')}</button>
                     </Link>
-                    <Link to="/free-trial/">
-                        <button className="main-button">{t('Free Trial')}</button>
+                    <Link to="">
+                        <button className="main-button">{t('Refer a Buddy')}</button>
                     </Link>
-                </div>
-                <div className="language-buttons">
-                    <button className="lang-button" onClick={() => changeLanguage('en')}>
-                        English
-                    </button>
-                    <button className="lang-button" onClick={() => changeLanguage('ar')}>
-                        العربية
-                    </button>
+                    <Link to="">
+                        <button className="main-button">{t('Upgrade/Add ons')}</button>
+                    </Link>
                 </div>
             </header>
         </div>
     );
 }
 
-export default HomePage;
+export default MemberPage;
