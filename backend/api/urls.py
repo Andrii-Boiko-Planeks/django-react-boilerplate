@@ -20,5 +20,6 @@ urlpatterns = [
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('api-token/', drf_views.obtain_auth_token, name='api-token'),
     path('hello-world/', views.hello_world_view, name='hello-world'),
-    path('hello-name/', views.hello_name_view, name='hello-name')
+    path('hello-name/', views.hello_name_view, name='hello-name'),
+    path('free-trial/', views.free_trial_view, name='free_trial'),
 ]
