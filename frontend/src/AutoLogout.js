@@ -89,7 +89,7 @@ function AutoLogout() {
                 <div className="timeout-overlay">
                     <div className="timeout-popup">
                         <p>Your session is about to expire in {countdown} seconds.</p>
-                        <p>Do you want to stay logged in?</p>
+                        <p>Do you want to stay here?</p>
                         <div className="button-container">
                             <button
                                 className="stay-logged-in-button"
@@ -101,7 +101,7 @@ function AutoLogout() {
                                 className="logout-button"
                                 onClick={handleLogout}
                             >
-                                Log Out
+                                Back to home page
                             </button>
                         </div>
                     </div>
