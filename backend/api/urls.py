@@ -22,4 +22,5 @@ urlpatterns = [
     path('hello-world/', views.hello_world_view, name='hello-world'),
     path('hello-name/', views.hello_name_view, name='hello-name'),
     path('free-trial/', views.free_trial_view, name='free_trial'),
+    path('my-membership/', views.my_membership_view, name='my-membership'),
 ]

@@ -8,6 +8,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authtoken.models import Token
+from rest_framework.exceptions import AuthenticationFailed
 
 from .models import FreeTrial
 from .serializers import HelloResponseSerializer, HelloRequestSerializer, FreeTrialSerializer
@@ -61,7 +62,8 @@ def free_trial_view(request):
                         email=email,
                         name=serializer.validated_data['first_name'] + ' ' + serializer.validated_data['last_name'],
                     )
-                    user.set_password(serializer.validated_data['country_code'] + serializer.validated_data['phone_number'])
+                    user.set_password(
+                        serializer.validated_data['country_code'] + serializer.validated_data['phone_number'])
                     user.save()
                 except IntegrityError:
                     user = User.objects.get(email=email)
@@ -100,3 +102,27 @@ def free_trial_view(request):
     #     free trial pass template (figma)
     # else:
     #     free trial fail template (figma)
+
+
+@api_view(['GET'])
+def my_membership_view(request):
+    token = request.headers.get('Authorization')
+    if not token:
+        raise AuthenticationFailed('Token not provided')
+
+    if token.startswith('Token '):
+        token = token.split(' ')[1]
+
+    try:
+        token_obj = Token.objects.get(key=token)
+        user = token_obj.user
+    except Token.DoesNotExist:
+        raise AuthenticationFailed('Invalid token')
+
+    data = {
+        'email': user.email,
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+    }
+
+    return Response(data, status=status.HTTP_200_OK)
