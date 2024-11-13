@@ -1,21 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-import "./assets/styles/AutoLogout.css"
+import "./assets/styles/AutoLogout.css";
 
 function AutoLogout() {
     const navigate = useNavigate();
     const [isInactive, setIsInactive] = useState(false);
     const [timer, setTimer] = useState(null);
     const [logoutTimer, setLogoutTimer] = useState(null);
+    const [countdown, setCountdown] = useState(30);
 
     useEffect(() => {
         const handleActivity = () => {
             clearTimeout(timer);
             clearTimeout(logoutTimer);
             setIsInactive(false);
+            setCountdown(30);
+
             const newTimer = setTimeout(() => {
                 setIsInactive(true);
-            }, 3 * 60 * 1000);
+            }, 1 * 60 * 1000);
+
             setTimer(newTimer);
         };
 
@@ -34,39 +38,69 @@ function AutoLogout() {
         };
     }, [timer, logoutTimer]);
 
+    useEffect(() => {
+        let countdownInterval;
+
+        if (isInactive) {
+            setCountdown(30);
+            countdownInterval = setInterval(() => {
+                setCountdown((prevCount) => {
+                    if (prevCount <= 1) {
+                        clearInterval(countdownInterval);
+                        handleLogout();
+                        return 0;
+                    }
+                    return prevCount - 1;
+                });
+            }, 1000);
+
+            const newLogoutTimer = setTimeout(() => {
+                handleLogout();
+            }, 30 * 1000);
+
+            setLogoutTimer(newLogoutTimer);
+        }
+
+        return () => {
+            clearInterval(countdownInterval);
+            clearTimeout(logoutTimer);
+        };
+    }, [isInactive]);
+
     const handleLogout = () => {
+        clearTimeout(timer);
+        clearTimeout(logoutTimer);
+        setIsInactive(false);
+        setCountdown(30);
         navigate("/login");
+        localStorage.removeItem('token');
+        sessionStorage.clear();
     };
 
     const handleStayLoggedIn = () => {
         setIsInactive(false);
         clearTimeout(logoutTimer);
+        setCountdown(30);
     };
-
-    useEffect(() => {
-        if (isInactive) {
-            const newLogoutTimer = setTimeout(() => {
-                handleLogout();
-            }, 1 * 60 * 1000);
-            setLogoutTimer(newLogoutTimer);
-        }
-
-        return () => {
-            clearTimeout(logoutTimer);
-        };
-    }, [isInactive, logoutTimer]);
 
     return (
         <>
             {isInactive && (
                 <div className="timeout-overlay">
                     <div className="timeout-popup">
-                        <p>Your session is about to expire. Do you want to stay logged in?</p>
+                        <p>Your session is about to expire in {countdown} seconds.</p>
+                        <p>Do you want to stay logged in?</p>
                         <div className="button-container">
-                            <button className="stay-logged-in-button" onClick={handleStayLoggedIn}>
+                            <button
+                                className="stay-logged-in-button"
+                                onClick={handleStayLoggedIn}
+                            >
                                 Stay Logged In
                             </button>
-                            <button className="logout-button" onClick={handleLogout}>
+                            <button
+                                className="logout-button"
+                                onClick={handleLogout}
+                            >
                                 Log Out
                             </button>
                         </div>
@@ -74,7 +108,6 @@ function AutoLogout() {
                 </div>
             )}
         </>
-
     );
 }
 
