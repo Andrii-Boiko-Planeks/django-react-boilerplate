@@ -47,11 +47,19 @@ function FreeTrialPage() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify({
+                    first_name: formData.firstName,
+                    last_name: formData.lastName,
+                    email: formData.email,
+                    country_code: formData.countryCode,
+                    phone_number: formData.phone,
+                }),
             });
 
             if (response.ok) {
-                alert("Form submitted successfully!");
+                const data = await response.json();
+                localStorage.setItem("authToken", data.token);
+                alert(data.message);
             } else {
                 const errorData = await response.json();
                 alert(errorData.message || "Error");
