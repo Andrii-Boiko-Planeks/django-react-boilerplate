@@ -27,7 +27,7 @@ function MemberPage() {
                 </div>
                 <h1 className="memberships-title">{t('Welcome! What do you want to do today?')}</h1>
                 <div className="buttons-container">
-                    <Link to="">
+                    <Link to="/my-membership/">
                         <button className="main-button">{t('My membership')}</button>
                     </Link>
                     <Link to="">
