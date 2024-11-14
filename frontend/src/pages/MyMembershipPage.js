@@ -1,17 +1,51 @@
 import {useTranslation} from "react-i18next";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import i18n from "../i18n";
 import Header from "../components/Header";
-import "../assets/styles/MyMembershipPage.css"
+import "../assets/styles/MyMembershipPage.css";
 
 function MyMembershipPage() {
     const { t } = useTranslation();
     const isRTL = i18n.language === "ar";
+    const [membershipData, setMembershipData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const savedLanguage = localStorage.getItem('language') || 'en';
         i18n.changeLanguage(savedLanguage);
+
+        const fetchMembershipData = async () => {
+            try {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/v1/my-membership/`, {
+                    headers: {
+                        Authorization: `Token ${localStorage.getItem('authToken')}`
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Error loading data');
+                }
+
+                const data = await response.json();
+                setMembershipData(data);
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchMembershipData();
     }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
 
     return (
@@ -37,31 +71,43 @@ function MyMembershipPage() {
                 </div>
                 <section className="personal-details">
                     <h2 className="section-title">{t("Personal Details")}</h2>
-                    <div className="detail-item"><label>{t("First Name")}:</label> <span>[First Name]</span></div>
-                    <div className="detail-item"><label>{t("Last Name")}:</label> <span>[Last Name]</span></div>
-                    <div className="detail-item"><label>{t("Birthday")}:</label> <span>dd/mm/yyyy</span></div>
-                    <div className="detail-item"><label>{t("Gender")}:</label> <span>[Gender]</span></div>
+                    <div className="detail-item"><label>{t("First Name")}:</label>
+                        <span>{membershipData.first_name || "Not provided"}</span></div>
+                    <div className="detail-item"><label>{t("Last Name")}:</label>
+                        <span>{membershipData.last_name || "Not provided"}</span></div>
+                    <div className="detail-item"><label>{t("Birthday")}:</label>
+                        <span>{membershipData.birthday || "Not provided"}</span></div>
+                    <div className="detail-item"><label>{t("Gender")}:</label>
+                        <span>{membershipData.gender || "Not provided"}</span></div>
                 </section>
                 <section className="contact-details">
                     <h2 className="section-title">{t("Contact Details")}</h2>
-                    <div className="detail-item"><label>{t("Email")}:</label> <span>abc@abc.com</span></div>
-                    <div className="detail-item"><label>{t("Phone Number")}:</label> <span>+27987497</span></div>
+                    <div className="detail-item"><label>{t("Email")}:</label>
+                        <span>{membershipData.email || "Not provided"}</span></div>
+                    <div className="detail-item"><label>{t("Phone Number")}:</label>
+                        <span>{membershipData.phone_number || "Not provided"}</span></div>
                 </section>
                 <section className="membership-details">
                     <h2 className="section-title">{t("Membership Details")}</h2>
-                    <div className="detail-item"><label>{t("Home Gym")}:</label> <span>[Location]</span></div>
-                    <div className="detail-item"><label>{t("Start Date")}:</label> <span>[Date]</span></div>
-                    <div className="detail-item"><label>{t("Membership Type")}:</label> <span>[Type]</span></div>
-                    <div className="detail-item"><label>{t("Amount of Visits")}:</label> <span>[Visits]</span></div>
-                    <div className="detail-item"><label>{t("Payment Date")}:</label> <span>[Payment Date]</span></div>
+                    <div className="detail-item"><label>{t("Home Gym")}:</label>
+                        <span>{membershipData.home_gym_location || "Not provided"}</span></div>
+                    <div className="detail-item"><label>{t("Start Date")}:</label>
+                        <span>{membershipData.start_date || "Not provided"}</span></div>
+                    <div className="detail-item"><label>{t("Membership Type")}:</label>
+                        <span>{membershipData.membership_type || "Not provided"}</span></div>
+                    <div className="detail-item"><label>{t("Amount of Visits")}:</label>
+                        <span>{membershipData.amouny_of_visits || "Not provided"}</span></div>
+                    <div className="detail-item"><label>{t("Payment Date")}:</label>
+                        <span>{membershipData.payment_date || "Not provided"}</span></div>
                     <div className="detail-item"><label>{t("Last Payment Date")}:</label>
-                        <span>[Last Payment Date]</span></div>
+                        <span>{membershipData.last_payment_date || "Not provided"}</span></div>
                     <div className="detail-item"><label>{t("Last Payment Amount")}:</label>
-                        <span>[Last Payment Amount]</span></div>
+                        <span>{membershipData.last_payment_date || "Not provided"}</span></div>
                     <div className="detail-item"><label>{t("Next Payment Date")}:</label>
-                        <span>[Next Payment Date]</span></div>
+                        <span>{membershipData.next_payment_date || "Not provided"}</span></div>
                     <div className="detail-item"><label>{t("Next Payment Amount")}:</label>
-                        <span>[Next Payment Amount]</span></div>
+                        <span>{membershipData.next_payment_amount || "Not provided"}</span>>
+                    </div>
                 </section>
                 <div className="buttons">
                     <button>{t("Freeze Membership")}</button>
