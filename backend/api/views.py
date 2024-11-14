@@ -54,7 +54,7 @@ def free_trial_view(request):
             if free_trial:
                 return Response(
                     {"message": "Trial already exists for this email"},
-                    status=status.HTTP_200_OK,
+                    status=status.HTTP_302_FOUND,
                 )
             else:
                 try:

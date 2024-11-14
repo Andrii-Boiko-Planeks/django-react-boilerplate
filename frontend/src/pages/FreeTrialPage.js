@@ -59,10 +59,10 @@ function FreeTrialPage() {
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem("authToken", data.token);
-                alert(data.message);
+                window.location.href = "/free-trial-pass/";
             } else {
                 const errorData = await response.json();
-                alert(errorData.message || "Error");
+                window.location.href = "/free-trial-fail/";
             }
         } catch (error) {
             console.error("Error submitting form:", error);
