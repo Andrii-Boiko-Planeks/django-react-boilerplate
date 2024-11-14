@@ -45,6 +45,8 @@ const resources = {
       "Upgrade/Add-ons": "Upgrade/Add-ons",
       "Membership Cancellation": "Membership Cancellation",
       "Change Home Club": "Change Home Club",
+      "Please check your phone and email to see more details about your free trial.": "Please check your phone and email to see more details about your free trial.",
+      "You are not eligible for a free trial! Please contact the reception to know more.": "You are not eligible for a free trial! Please contact the reception to know more.",
     }
   },
   ar: {
@@ -90,6 +92,9 @@ const resources = {
       "Upgrade/Add-ons": "الترقية/الإضافات",
       "Membership Cancellation": "إلغاء العضوية",
       "Change Home Club": "تغيير النادي الرئيسي",
+      "Please check your phone and email to see more details about your free trial.": "يُرجى التحقق من هاتفك وبريدك الإلكتروني لمعرفة المزيد من التفاصيل حول الإصدار التجريبي المجاني.",
+      "You are not eligible for a free trial! Please contact the reception to know more.": "أنت غير مؤهل للحصول على تجربة مجانية! يرجى الاتصال بمكتب الاستقبال لمعرفة المزيد.",
+
     }
   }
 };
