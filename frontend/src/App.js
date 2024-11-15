@@ -16,6 +16,7 @@ import ChangeHomeClubPage from "./pages/ChangeHomeClubPage";
 import ChangeHomeClubPassPage from "./pages/ChangeHomeClubPass";
 import UpdateMembershipInformationPage from "./pages/UpdateMembershipInformationPage";
 import UpdateMembershipInformationPassPage from "./pages/UpdateMembershipInformationPassPage";
+import MembershipCancellationPage from "./pages/MembershipCancellationPage";
 
 export default function App() {
     return (
@@ -36,6 +37,7 @@ export default function App() {
                     <Route path={'/change-home-club-pass/'} element={<ChangeHomeClubPassPage/>}/>
                     <Route path={'/update-membership-information/'} element={<UpdateMembershipInformationPage/>}/>
                     <Route path={'/update-membership-information-pass/'} element={<UpdateMembershipInformationPassPage/>}/>
+                    <Route path={'/membership-cancellation/'} element={<MembershipCancellationPage/>}/>
                 </Route>
             </Routes>
         </Router>
