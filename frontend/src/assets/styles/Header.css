@@ -1,0 +1,36 @@
+.user-info {
+    position: relative;
+    z-index: 1000;
+}
+
+.user-info span {
+    color: black;
+    font-size: 16px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.header-greeting {
+    display: none;
+}
+
+.header-navigation {
+    justify-content: space-between;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.centered-text {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+}
