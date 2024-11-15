@@ -96,13 +96,13 @@ function MyMembershipPage() {
                     <div className="detail-item"><label>{t("Membership Type")}:</label>
                         <span>{membershipData.membership_type || "Not provided"}</span></div>
                     <div className="detail-item"><label>{t("Amount of Visits")}:</label>
-                        <span>{membershipData.amouny_of_visits || "Not provided"}</span></div>
+                        <span>{membershipData.amount_of_visits || "Not provided"}</span></div>
                     <div className="detail-item"><label>{t("Payment Date")}:</label>
                         <span>{membershipData.payment_date || "Not provided"}</span></div>
                     <div className="detail-item"><label>{t("Last Payment Date")}:</label>
                         <span>{membershipData.last_payment_date || "Not provided"}</span></div>
                     <div className="detail-item"><label>{t("Last Payment Amount")}:</label>
-                        <span>{membershipData.last_payment_date || "Not provided"}</span></div>
+                        <span>{membershipData.last_payment_amount || "Not provided"}</span></div>
                     <div className="detail-item"><label>{t("Next Payment Date")}:</label>
                         <span>{membershipData.next_payment_date || "Not provided"}</span></div>
                     <div className="detail-item"><label>{t("Next Payment Amount")}:</label>
