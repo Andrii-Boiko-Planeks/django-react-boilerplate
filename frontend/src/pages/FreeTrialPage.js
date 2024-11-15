@@ -59,6 +59,7 @@ function FreeTrialPage() {
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem("authToken", data.token);
+                sessionStorage.setItem("firstName", data.first_name)
                 window.location.href = "/free-trial-pass/";
             } else {
                 const errorData = await response.json();
