@@ -14,6 +14,8 @@ import FreeTrialPassPage from "./pages/FreeTrialPassPage";
 import FreeTrialFailPage from "./pages/FreeTrialFailPage";
 import ChangeHomeClubPage from "./pages/ChangeHomeClubPage";
 import ChangeHomeClubPassPage from "./pages/ChangeHomeClubPass";
+import UpdateMembershipInformationPage from "./pages/UpdateMembershipInformationPage";
+import UpdateMembershipInformationPassPage from "./pages/UpdateMembershipInformationPassPage";
 
 export default function App() {
     return (
@@ -32,6 +34,8 @@ export default function App() {
                     <Route path={'/free-trial-fail/'} element={<FreeTrialFailPage/>}/>
                     <Route path={'/change-home-club/'} element={<ChangeHomeClubPage/>}/>
                     <Route path={'/change-home-club-pass/'} element={<ChangeHomeClubPassPage/>}/>
+                    <Route path={'/update-membership-information/'} element={<UpdateMembershipInformationPage/>}/>
+                    <Route path={'/update-membership-information-pass/'} element={<UpdateMembershipInformationPassPage/>}/>
                 </Route>
             </Routes>
         </Router>

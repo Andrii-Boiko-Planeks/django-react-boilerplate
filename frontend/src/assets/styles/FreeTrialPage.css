@@ -12,6 +12,13 @@
     width: 100%;
 }
 
+.gender-birth-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
 .form-field {
     margin-bottom: 1.5rem;
     width: 48%;
