@@ -12,7 +12,7 @@
     width: 100%;
 }
 
-.gender-birth-fields {
+.gender-birth-fields, .buddies-select-field{
     display: flex;
     justify-content: space-between;
     gap: 1rem;

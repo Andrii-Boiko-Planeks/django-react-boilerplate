@@ -25,6 +25,8 @@ import MembershipPaymentPage from "./pages/MembershipPaymentPage"
 import MembershipPaymentPassPage from "./pages/MembershipPaymentPassPage"
 import MembershipPendingPage from "./pages/MembershipPendingPage"
 import MembershipPendingPassPage from "./pages/MembershipPendingPassPage"
+import ReferBuddyPage from "./pages/ReferBuddyPage"
+import ReferBuddyConfirmationPage from "./pages/ReferBuddyConfirmationPage"
 
 export default function App() {
     return (
@@ -54,6 +56,8 @@ export default function App() {
                     <Route path={'/membership-payment-confirmation/'} element={<MembershipPaymentPassPage/>}/>
                     <Route path={'/membership-pending/'} element={<MembershipPendingPage/>}/>
                     <Route path={'/membership-pending-confirmation/'} element={<MembershipPendingPassPage/>}/>
+                    <Route path={'/refer-buddy/'} element={<ReferBuddyPage/>}/>
+                    <Route path={'/refer-buddy-confirmation/'} element={<ReferBuddyConfirmationPage/>}/>
                 </Route>
             </Routes>
         </Router>
