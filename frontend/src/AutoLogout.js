@@ -72,7 +72,7 @@ function AutoLogout() {
         clearTimeout(logoutTimer);
         setIsInactive(false);
         setCountdown(30);
-        navigate("/login");
+        navigate("/homepage");
         localStorage.removeItem('token');
         sessionStorage.clear();
     };

@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import {HelloWorldPage} from "./pages/HelloWorldPage";
 import {HelloNamePage} from "./pages/HelloNamePage";
 import {Layout} from "./components/Layout";
+import WelcomePage from "./pages/WelcomePage";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import FreeTrialPage from "./pages/FreeTrialPage";
@@ -17,18 +18,18 @@ import ChangeHomeClubPassPage from "./pages/ChangeHomeClubPass";
 import UpdateMembershipInformationPage from "./pages/UpdateMembershipInformationPage";
 import UpdateMembershipInformationPassPage from "./pages/UpdateMembershipInformationPassPage";
 import MembershipCancellationPage from "./pages/MembershipCancellationPage";
-import MembershipCancellationConfirmPage from "./pages/MembershipCancellationConfirmPage"
-import MembershipCancellationPassPage from "./pages/MembershipCancellationPassPage"
-import MembershipFreezePage from "./pages/MembershipFreezePage"
-import MembershipFreezePassPage from "./pages/MembershipFreezePassPage"
-import MembershipPaymentPage from "./pages/MembershipPaymentPage"
-import MembershipPaymentPassPage from "./pages/MembershipPaymentPassPage"
-import MembershipPendingPage from "./pages/MembershipPendingPage"
-import MembershipPendingPassPage from "./pages/MembershipPendingPassPage"
-import ReferBuddyPage from "./pages/ReferBuddyPage"
-import ReferBuddyConfirmationPage from "./pages/ReferBuddyConfirmationPage"
-import UpgradesOrAddOnsPage from "./pages/UpgradesOrAddOnsPage"
-import UpgradesOrAddOnsConfirmationPage from "./pages/UpgradesOrAddOnsConfirmationPage"
+import MembershipCancellationConfirmPage from "./pages/MembershipCancellationConfirmPage";
+import MembershipCancellationPassPage from "./pages/MembershipCancellationPassPage";
+import MembershipFreezePage from "./pages/MembershipFreezePage";
+import MembershipFreezePassPage from "./pages/MembershipFreezePassPage";
+import MembershipPaymentPage from "./pages/MembershipPaymentPage";
+import MembershipPaymentPassPage from "./pages/MembershipPaymentPassPage";
+import MembershipPendingPage from "./pages/MembershipPendingPage";
+import MembershipPendingPassPage from "./pages/MembershipPendingPassPage";
+import ReferBuddyPage from "./pages/ReferBuddyPage";
+import ReferBuddyConfirmationPage from "./pages/ReferBuddyConfirmationPage";
+import UpgradesOrAddOnsPage from "./pages/UpgradesOrAddOnsPage";
+import UpgradesOrAddOnsConfirmationPage from "./pages/UpgradesOrAddOnsConfirmationPage";
 
 export default function App() {
     return (
@@ -37,6 +38,7 @@ export default function App() {
                 <Route element={<Layout/>}>
                     <Route path={'/hello_name/'} element={<HelloNamePage/>}/>
                     <Route path={'*'} element={<HelloWorldPage/>}/>
+                    <Route path={'/welcome/'} element={<WelcomePage/>}/>
                     <Route path={'/homepage/'} element={<HomePage/>}/>
                     <Route path={'/login/'} element={<LoginPage/>}/>
                     <Route path={'/free-trial/'} element={<FreeTrialPage/>}/>
