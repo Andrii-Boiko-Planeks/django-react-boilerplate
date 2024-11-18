@@ -23,6 +23,8 @@ import MembershipFreezePage from "./pages/MembershipFreezePage"
 import MembershipFreezePassPage from "./pages/MembershipFreezePassPage"
 import MembershipPaymentPage from "./pages/MembershipPaymentPage"
 import MembershipPaymentPassPage from "./pages/MembershipPaymentPassPage"
+import MembershipPendingPage from "./pages/MembershipPendingPage"
+import MembershipPendingPassPage from "./pages/MembershipPendingPassPage"
 
 export default function App() {
     return (
@@ -50,6 +52,8 @@ export default function App() {
                     <Route path={'/membership-freeze-pass/'} element={<MembershipFreezePassPage/>}/>
                     <Route path={'/membership-payment/'} element={<MembershipPaymentPage/>}/>
                     <Route path={'/membership-payment-confirmation/'} element={<MembershipPaymentPassPage/>}/>
+                    <Route path={'/membership-pending/'} element={<MembershipPendingPage/>}/>
+                    <Route path={'/membership-pending-confirmation/'} element={<MembershipPendingPassPage/>}/>
                 </Route>
             </Routes>
         </Router>
