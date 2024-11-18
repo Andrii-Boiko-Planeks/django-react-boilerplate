@@ -5,7 +5,7 @@ import '../assets/styles/MemberPage.css';
 import i18n from '../i18n';
 import Header from "../components/Header";
 
-function MemberPage() {
+export default function MemberPage() {
     const {t} = useTranslation();
 
     useEffect(() => {
@@ -16,7 +16,7 @@ function MemberPage() {
     return (
         <div className="App">
             <Header/>
-            <header className="App-header">
+            <main className="App-main">
                 <div className="video-container">
                     <svg width="479" height="399" viewBox="0 0 479 399" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="2.5" y="2.5" width="474" height="394" rx="32.5" stroke="black" stroke-width="5"/>
@@ -40,9 +40,7 @@ function MemberPage() {
                         <button className="main-button">{t('Upgrade/Add ons')}</button>
                     </Link>
                 </div>
-            </header>
+            </main>
         </div>
     );
 }
-
-export default MemberPage;
