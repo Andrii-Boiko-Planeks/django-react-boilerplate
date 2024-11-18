@@ -27,6 +27,8 @@ import MembershipPendingPage from "./pages/MembershipPendingPage"
 import MembershipPendingPassPage from "./pages/MembershipPendingPassPage"
 import ReferBuddyPage from "./pages/ReferBuddyPage"
 import ReferBuddyConfirmationPage from "./pages/ReferBuddyConfirmationPage"
+import UpgradesOrAddOnsPage from "./pages/UpgradesOrAddOnsPage"
+import UpgradesOrAddOnsConfirmationPage from "./pages/UpgradesOrAddOnsConfirmationPage"
 
 export default function App() {
     return (
@@ -58,6 +60,8 @@ export default function App() {
                     <Route path={'/membership-pending-confirmation/'} element={<MembershipPendingPassPage/>}/>
                     <Route path={'/refer-buddy/'} element={<ReferBuddyPage/>}/>
                     <Route path={'/refer-buddy-confirmation/'} element={<ReferBuddyConfirmationPage/>}/>
+                    <Route path={'/upgrades-or-add-ons/'} element={<UpgradesOrAddOnsPage/>}/>
+                    <Route path={'/upgrades-or-add-ons-confirmation/'} element={<UpgradesOrAddOnsConfirmationPage/>}/>
                 </Route>
             </Routes>
         </Router>
