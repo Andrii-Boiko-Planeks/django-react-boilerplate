@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import "../assets/styles/YouTubeVideo.css";
 
-const YouTubeVideo = ({ videoId }) => {
+const YouTubeVideo = ({ videoId = "uNN62f55EV0" }) => {
     return (
         <div className="video-container">
             <iframe
