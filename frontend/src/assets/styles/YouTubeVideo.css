@@ -1,0 +1,13 @@
+.video-container {
+    margin-bottom: 20px;
+    width: 50rem;
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    background: #FFFFFF;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+}
