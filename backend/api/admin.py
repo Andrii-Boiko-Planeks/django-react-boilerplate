@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import FreeTrial
+from .models import FreeTrial, Membership
 
 
 @admin.register(FreeTrial)
@@ -18,3 +18,15 @@ class FreeTrialAdmin(admin.ModelAdmin):
             'fields': ('created_at', 'updated_at')
         }),
     )
+
+
+@admin.register(Membership)
+class MembershipAdmin(admin.ModelAdmin):
+    list_display = ('user', 'home_gym_location', 'membership_type', 'start_date', 'amount_of_visits', 'payment_date',
+                    'last_payment_date', 'next_payment_date', 'last_payment_amount', 'next_payment_amount',
+                    'created_at', 'updated_at')
+    list_filter = (
+        'home_gym_location', 'membership_type', 'start_date', 'payment_date', 'last_payment_date', 'next_payment_date')
+    search_fields = ('user__email', 'home_gym_location', 'membership_type')
+    ordering = ('-created_at',)
+    readonly_fields = ('created_at', 'updated_at')
