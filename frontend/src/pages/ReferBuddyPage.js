@@ -123,9 +123,9 @@ export default function ReferBuddyPage() {
                     <SideBar/>
                     <div className="membership-details-pages-main-info">
                         <h2 className="membership-details-pages-main-info-title">
-                            Buddy Referral
+                            {t('Buddy Referral')}
                         </h2>
-                        <h3>Refer a friend and Win!</h3>
+                        <h3>{t('Refer a friend and Win')}!</h3>
                         <div className="membership-details-pages-main-info-text">
                             <form className="update-membership-form" onSubmit={handleSubmit}>
                                 <div className="">
@@ -209,10 +209,10 @@ export default function ReferBuddyPage() {
                 </div>
                 <div className="successfull-text">
                     <h2>
-                        OR
+                        {t('OR')}
                     </h2>
                     <p>
-                        Scan the QR code below to refer your friends!
+                        {t('Scan the QR code below to refer your friends')}!
                     </p>
                     <div className="successfull-text-insert">
                         <svg width="256" height="184" viewBox="0 0 256 184" fill="none"
@@ -222,7 +222,7 @@ export default function ReferBuddyPage() {
                     </div>
                 </div>
                 <div className="membership-details-pages-main-buttons">
-                    <button className="change-club-button">{t('Refer me Buddies!')}</button>
+                    <button className="change-club-button">{t('Refer me Buddies')}!</button>
                     {keyboardVisible && (
                         <div className="keyboard-container">
                             <Keyboard

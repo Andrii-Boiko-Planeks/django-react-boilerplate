@@ -2,9 +2,18 @@ import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import {Link} from "react-router-dom";
 import YouTubeVideo from "../components/YouTubeVideo";
-import React from "react";
+import React, {useEffect} from "react";
+import {useTranslation} from "react-i18next";
+import i18n from "../i18n";
 
 export default function UpdateMembershipInformationPassPage () {
+    const {t} = useTranslation();
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        i18n.changeLanguage(savedLanguage);
+    }, []);
+
     return (
         <main className="App-main">
             <div className="membership-details-pages">
@@ -17,18 +26,18 @@ export default function UpdateMembershipInformationPassPage () {
                 </div>
                 <div className="successfull-text">
                     <h2>
-                        Details Successfully Updated!
+                        {t('Details Successfully Updated')}!
                     </h2>
                     <p>
-                        Go to your membership page to check them out!
+                        {t('Go to your membership page to check them out')}!
                     </p>
                 </div>
                 <div className="membership-details-pages-main-buttons">
                     <Link to="/homepage/">
-                        <button className="change-club-button">Homepage</button>
+                        <button className="change-club-button">{t('Homepage')}</button>
                     </Link>
                     <Link to="/log-out/">
-                        <button className="change-club-button">Log out</button>
+                        <button className="change-club-button">{t('Log out')}</button>
                     </Link>
                 </div>
             </div>

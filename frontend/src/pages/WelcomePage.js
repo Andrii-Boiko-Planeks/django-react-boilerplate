@@ -24,7 +24,7 @@ export default function WelcomePage() {
                 <YouTubeVideo/>
                 <div className="buttons-container">
                     <Link to="/homepage/">
-                        <button className="main-button">{t('Click to Start!')}</button>
+                        <button className="main-button">{t('Click to Start')}</button>
                     </Link>
                 </div>
             </header>

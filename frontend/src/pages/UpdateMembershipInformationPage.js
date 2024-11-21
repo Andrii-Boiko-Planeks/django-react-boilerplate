@@ -127,7 +127,7 @@ export default function UpdateMembershipInformationPage() {
                     <SideBar/>
                     <div className="membership-details-pages-main-info">
                         <h2 className="membership-details-pages-main-info-title">
-                            Update Details
+                            {t('Update Details')}
                         </h2>
                         <div className="membership-details-pages-main-info-text">
                             <form className="update-membership-form" onSubmit={handleSubmit}>

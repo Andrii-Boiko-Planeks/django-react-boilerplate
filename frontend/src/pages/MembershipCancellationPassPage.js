@@ -1,9 +1,18 @@
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import {Link} from "react-router-dom";
-import React from "react";
+import React, {useEffect} from "react";
+import {useTranslation} from "react-i18next";
+import i18n from "../i18n";
 
 export default function MembershipCancellationPassPage () {
+    const {t} = useTranslation();
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        i18n.changeLanguage(savedLanguage);
+    }, []);
+
     return (
         <main className="App-main">
             <div className="membership-details-pages">
@@ -12,7 +21,7 @@ export default function MembershipCancellationPassPage () {
                     <SideBar/>
                     <div className="membership-details-pages-main-info">
                         <h2 className="membership-details-pages-main-info-title">
-                            Membership Cancelled Successfully!
+                            {t('Membership Cancelled Successfully')}!
                         </h2>
                     </div>
                 </div>
@@ -21,10 +30,10 @@ export default function MembershipCancellationPassPage () {
                 </div>
                 <div className="membership-details-pages-main-buttons">
                     <Link to="/homepage/">
-                        <button className="change-club-button">Homepage</button>
+                        <button className="change-club-button">{t('Homepage')}</button>
                     </Link>
                     <Link to="/log-out/">
-                        <button className="change-club-button">Log out</button>
+                        <button className="change-club-button">{t('Log out')}</button>
                     </Link>
                 </div>
             </div>
