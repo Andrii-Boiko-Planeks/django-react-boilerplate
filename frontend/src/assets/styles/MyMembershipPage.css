@@ -5,17 +5,6 @@ body {
     color: #000000;
 }
 
-.rtl {
-    direction: rtl;
-    text-align: right;
-}
-
-.rtl .detail-item {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-}
-
 .membership-info {
     max-width: 684px;
     margin: 20px auto;
@@ -32,12 +21,16 @@ h1, h2 {
 
 .section-title {
     grid-column: span 2;
-    text-align: left;
+    text-align: start;
     margin-bottom: 1rem;
     color: #000000;
     font-family: 'Inter', serif;
     font-style: normal;
     font-weight: 600;
+}
+
+.rtl .section-title {
+    text-align: end;
 }
 
 .personal-details, .contact-details, .membership-details {
@@ -46,6 +39,14 @@ h1, h2 {
     gap: 1rem;
     width: 100%;
     margin-bottom: 2rem;
+direction: ltr;
+}
+
+html[dir="rtl"] .personal-details,
+html[dir="rtl"] .contact-details,
+html[dir="rtl"] .membership-details {
+    direction: rtl;
+    text-align: right;
 }
 
 .detail-item {

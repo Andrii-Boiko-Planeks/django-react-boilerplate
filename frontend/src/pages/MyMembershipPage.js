@@ -4,9 +4,8 @@ import i18n from "../i18n";
 import Header from "../components/Header";
 import "../assets/styles/MyMembershipPage.css";
 
-function MyMembershipPage() {
-    const { t } = useTranslation();
-    const isRTL = i18n.language === "ar";
+export default function MyMembershipPage() {
+    const {t} = useTranslation();
     const [membershipData, setMembershipData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -49,7 +48,7 @@ function MyMembershipPage() {
 
 
     return (
-        <div className={`App ${isRTL ? "rtl" : ""}`}>
+        <div className="App">
             <Header/>
             <div className="membership-info">
                 <button className="edit-button">{t("Edit")}</button>
@@ -120,5 +119,3 @@ function MyMembershipPage() {
         </div>
     );
 }
-
-export default MyMembershipPage;

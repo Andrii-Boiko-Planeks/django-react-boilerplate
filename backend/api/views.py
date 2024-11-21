@@ -10,7 +10,7 @@ from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.exceptions import AuthenticationFailed
 
-from .models import FreeTrial
+from .models import FreeTrial, Membership
 from .serializers import HelloResponseSerializer, HelloRequestSerializer, FreeTrialSerializer
 
 User = get_user_model()
@@ -119,10 +119,21 @@ def my_membership_view(request):
     except Token.DoesNotExist:
         raise AuthenticationFailed('Invalid token')
 
+    membership = Membership.objects.filter(user=user).order_by('-created_at').first()
+
     data = {
         'email': user.email,
         'first_name': user.first_name,
         'last_name': user.last_name,
+        'home_gym_location': membership.home_gym_location,
+        'start_date': membership.start_date,
+        'membership_type': membership.membership_type,
+        'amount_of_visits': membership.amount_of_visits,
+        'payment_date': membership.payment_date,
+        'last_payment_date': membership.last_payment_date,
+        'last_payment_amount': membership.last_payment_amount,
+        'next_payment_date': membership.next_payment_date,
+        'next_payment_amount': membership.next_payment_amount,
     }
 
     return Response(data, status=status.HTTP_200_OK)

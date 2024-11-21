@@ -6,9 +6,17 @@
 }
 
 .membership-details-pages-main-info {
-    width: 80%;
-    padding-left: 3rem;
+    width: 90%;
+    padding-left: 1rem;
+    padding-right: 1rem;
     margin-top: 1rem;
+}
+
+.membership-details-pages-main-info .video-container {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .membership-details-pages-main-info-title {
@@ -19,10 +27,12 @@
 
 .membership-details-pages-main-info-text p {
     font-size: 1.5rem;
+    color: #000000;
 }
 
 .membership-details-pages-main-info-text li {
     font-size: 1.5rem;
+    color: #000000;
 }
 
 .club-select {
@@ -104,4 +114,49 @@
     text-align: left;
     padding: 0.5rem;
     margin: 0 auto;
+}
+
+html[dir="rtl"] .sidebar-included-main-content {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .membership-details-pages-main-info {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    text-align: right;
+}
+
+html[dir="rtl"] .membership-details-pages-main-info-title {
+    text-align: right;
+    direction: rtl;
+}
+
+html[dir="rtl"] .membership-details-pages-main-info-text p,
+html[dir="rtl"] .membership-details-pages-main-info-text li {
+    text-align: right;
+    direction: rtl;
+}
+
+html[dir="rtl"] .club-select {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .membership-details-pages-main-buttons {
+    flex-direction: column-reverse;
+}
+
+html[dir="rtl"] .successfull-text h2 {
+    text-align: right;
+}
+
+html[dir="rtl"] .successfull-text p {
+    text-align: right;
+}
+
+html[dir="rtl"] .gender-select-field,
+html[dir="rtl"] .buddies-select-field {
+    direction: rtl;
+    text-align: right;
 }

@@ -1,18 +1,7 @@
-.name-fields {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    width: 100%;
-}
-
-.email-phone-fields {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    width: 100%;
-}
-
-.gender-birth-fields, .buddies-select-field{
+.name-fields,
+.email-phone-fields,
+.gender-birth-fields,
+.buddies-select-field {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
@@ -102,4 +91,12 @@
     border-radius: 10px;
     outline: none;
     background: #D9D9D9;
+}
+
+html[dir="rtl"] .name-fields,
+html[dir="rtl"] .email-phone-fields,
+html[dir="rtl"] .gender-birth-fields,
+html[dir="rtl"] .buddies-select-field,
+html[dir="rtl"] .phone-input-container {
+    flex-direction: row-reverse;
 }

@@ -1,9 +1,18 @@
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import "../assets/styles/MembershipDetailPage.css";
+import {useTranslation} from "react-i18next";
+import {useEffect} from "react";
+import i18n from "../i18n";
 
 export default function ChangeHomeClubPage() {
     const clubs = ["Club A", "Club B", "Club C", "Club D"];
+    const {t} = useTranslation();
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        i18n.changeLanguage(savedLanguage);
+    }, []);
 
     return (
         <main className="App-main">
@@ -13,14 +22,14 @@ export default function ChangeHomeClubPage() {
                     <SideBar/>
                     <div className="membership-details-pages-main-info">
                         <h2 className="membership-details-pages-main-info-title">
-                            Change Home Club
+                            {t('Change Home Club')}
                         </h2>
                         <div className="membership-details-pages-main-info-text">
-                            <p>You can change your home club only once a year!</p>
-                            <p>Plus members have access to all clubs</p>
-                            <p>Membership Type: [Flex/Core/Plus]</p>
-                            <p>Current Home Club:</p>
-                            <p>Change Home Club:</p>
+                            <p>{t('You can change your home club only once a year')}!</p>
+                            <p>{t('Plus members have access to all clubs')}</p>
+                            <p>{t('Membership Type')}: [Flex/Core/Plus]</p>
+                            <p>{t('Current Home Club')}:</p>
+                            <p>{t('Change Home Club')}:</p>
                         </div>
 
                         <select className="club-select">
@@ -33,7 +42,7 @@ export default function ChangeHomeClubPage() {
                     </div>
                 </div>
                 <div className="membership-details-pages-main-buttons">
-                    <button className="change-club-button">Change Home Club</button>
+                    <button className="change-club-button">{t('Change Home Club')}</button>
                 </div>
             </div>
         </main>

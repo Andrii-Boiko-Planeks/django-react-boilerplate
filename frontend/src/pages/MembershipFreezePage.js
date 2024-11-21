@@ -1,12 +1,19 @@
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import React, { useState, useEffect, useRef } from "react";
-import { t } from "i18next";
 import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 import i18n from "../i18n";
+import {useTranslation} from "react-i18next";
 
 export default function MembershipFreezePage() {
+    const {t} = useTranslation();
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        i18n.changeLanguage(savedLanguage);
+    }, []);
+
     const [formData, setFormData] = useState({
         membershipType: "",
         startDate: "",
@@ -116,7 +123,7 @@ export default function MembershipFreezePage() {
                     <SideBar />
                     <div className="membership-details-pages-main-info">
                         <h2 className="membership-details-pages-main-info-title">
-                            Freeze Membership
+                            {t('Freeze Membership')}
                         </h2>
                         <div className="membership-details-pages-main-info-text">
                             <form className="freeze-membership-form">
@@ -159,14 +166,14 @@ export default function MembershipFreezePage() {
                                     />
                                 </div>
                                 <div className="form-note">
-                                    <p>Freeze Fee: 50 dhs</p>
+                                    <p>{t('Freeze Fee: 50 dhs')}</p>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div className="membership-details-pages-main-buttons">
-                    <button className="change-club-button">Pay Now</button>
+                    <button className="change-club-button">{t('Pay Now')}</button>
                     {keyboardVisible && (
                         <div className="keyboard-container">
                             <Keyboard onKeyPress={handleKeyboardInput} />

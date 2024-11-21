@@ -1,0 +1,31 @@
+.App {
+  text-align: left;
+  direction: ltr;
+}
+
+.container {
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.App.rtl {
+  text-align: right;
+  direction: rtl;
+}
+
+.rtl .container {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.rtl .flex-container {
+  flex-direction: row-reverse;
+}
+
+.rtl .ml-auto { margin-left: 0; margin-right: auto; }
+.rtl .mr-auto { margin-right: 0; margin-left: auto; }
+.rtl .pl-3 { padding-left: 0; padding-right: 1rem; }
+.rtl .pr-3 { padding-right: 0; padding-left: 1rem; }
+
+.rtl .border-l { border-left: none; border-right: 1px solid; }
+.rtl .border-r { border-right: none; border-left: 1px solid; }
