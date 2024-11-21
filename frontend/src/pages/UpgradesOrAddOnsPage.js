@@ -201,7 +201,7 @@ export default function UpgradesOrAddOnsPage() {
                     </form>
                 </div>
                 <div className="membership-details-pages-main-buttons">
-                    <button className="change-club-button">{t('Confirm Selection!')}</button>
+                    <button className="change-club-button">{t('Confirm Selection')}!</button>
                     {keyboardVisible && (
                         <div className="keyboard-container">
                             <Keyboard

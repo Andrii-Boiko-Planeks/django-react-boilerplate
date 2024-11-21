@@ -1,28 +1,36 @@
 import "../assets/styles/SideBar.css";
 import {Link} from "react-router-dom";
+import i18n from "../i18n";
 
 export default function SideBar() {
+    const {t} = useTranslation();
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        i18n.changeLanguage(savedLanguage);
+    }, []);
+
     return (
         <div className="sidebar-container">
             <div className="sidebar-container-title">
-                <h4>My membership</h4>
+                <h4>{t('My membership')}</h4>
             </div>
             <div className="sidebar-container-buttons">
                 <ul>
                     <Link to="/my-membership">
-                        <li>My Membership</li>
+                        <li>{t('My Membership')}</li>
                     </Link>
                     <Link to="/update-details">
-                        <li>Update Details</li>
+                        <li>{t('Update Details')}</li>
                     </Link>
                     <Link to="/freeze-membership">
-                        <li>Freeze Membership</li>
+                        <li>{t('Freeze Membership')}</li>
                     </Link>
                     <Link to="/membership-cencellaation">
-                        <li>Membership Cancellation</li>
+                        <li>{t('Membership Cancellation')}</li>
                     </Link>
                     <Link to="/change-home-club">
-                        <li>Change Home Club</li>
+                        <li>{t('Change Home Club')}</li>
                     </Link>
                 </ul>
             </div>
