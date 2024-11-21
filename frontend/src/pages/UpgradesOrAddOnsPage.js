@@ -124,12 +124,12 @@ export default function UpgradesOrAddOnsPage() {
                     <SideBar/>
                     <div className="membership-details-pages-main-info">
                         <h2 className="membership-details-pages-main-info-title">
-                            Upgrades
+                            {t('Upgrades')}
                         </h2>
-                        <h3>Current Membership: </h3>
-                        <p>Name: [first] [last]</p>
-                        <p>Membership Type: [plus/core/flex]</p>
-                        <p>Membership Fee: [Amount]</p>
+                        <h3>{t('Current Membership')}: </h3>
+                        <p>{t('Name')}: [first] [last]</p>
+                        <p>{t('Membership Type')}: [plus/core/flex]</p>
+                        <p>{t('Membership Fee')}: [Amount]</p>
                         <div className="membership-details-pages-main-info-text">
                             <form className="update-membership-form" onSubmit={handleSubmit}>
                                 <div className="">
@@ -151,15 +151,15 @@ export default function UpgradesOrAddOnsPage() {
                                     </div>
                                 </div>
                             </form>
-                            <p>Membership Fee: [amt]</p>
-                            <p>Vat: [amt]</p>
-                            <p>Total: [amt]</p>
+                            <p>{t('Membership Fee')}: [amt]</p>
+                            <p>{t('Vat')}: [amt]</p>
+                            <p>{t('Total')}: [amt]</p>
                         </div>
                     </div>
                 </div>
                 <div className="successfull-text">
                     <h2>
-                        Add-ons
+                        {t('Add-ons')}
                     </h2>
                     <form className="addons-form">
                         <div className="form-checkbox">
@@ -201,7 +201,7 @@ export default function UpgradesOrAddOnsPage() {
                     </form>
                 </div>
                 <div className="membership-details-pages-main-buttons">
-                    <button className="change-club-button">{t('Confirm Selection!')}</button>
+                    <button className="change-club-button">{t('Confirm Selection')}!</button>
                     {keyboardVisible && (
                         <div className="keyboard-container">
                             <Keyboard

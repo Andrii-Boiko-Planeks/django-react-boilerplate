@@ -2,8 +2,16 @@ import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 import "../assets/styles/MembershipDetailPage.css";
 import {Link} from "react-router-dom";
+import i18n from "../i18n";
 
 export default function MembershipPaymentPassPage() {
+    const {t} = useTranslation();
+
+    useEffect(() => {
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        i18n.changeLanguage(savedLanguage);
+    }, []);
+
     return (
         <main className="App-main">
             <div className="membership-details-pages">
@@ -23,15 +31,15 @@ export default function MembershipPaymentPassPage() {
                 </div>
                 <div className="successfull-text">
                     <h2>
-                        The payment link has been sent to your phone!
+                        {t('The payment link has been sent to your phone')}!
                     </h2>
                 </div>
                 <div className="membership-details-pages-main-buttons">
                     <Link to="/homepage/">
-                        <button className="change-club-button">Homepage</button>
+                        <button className="change-club-button">{t('Homepage')}</button>
                     </Link>
                     <Link to="/log-out/">
-                        <button className="change-club-button">Log out</button>
+                        <button className="change-club-button">{t('Log out')}</button>
                     </Link>
                 </div>
             </div>
